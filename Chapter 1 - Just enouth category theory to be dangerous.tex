@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+
+\setlist[enumerate,1]{
+    label=(\alph*), 
+    topsep=0pt, 
+    partopsep=0pt, 
+    parsep=0pt,
+    leftmargin=*
+}
+\newcommand{\currchapter}{1}
+\newtheoremstyle{breakstyle}
+	{5pt}
+	{10pt}
+	{\normalfont}
+	{0pt}
+	{\bfseries}
+	{}
+	{\newline}
+	{}
+\theoremstyle{breakstyle}
+\newtheorem{exercise}{Exercise}[section]
+\renewcommand{\theexercise}{\currchapter.\thesection.\Alph{exercise}}
+\title{Chapter 1 - Just enough category theory to be dangerous}
+\author{Flandre}
+\date{29 Dec 2025}
+
+\begin{document}
+\maketitle
+
+\section{Categories and functors}
+\begin{exercise}
+	\leavevmode \vspace{-\baselineskip}
+		\begin{enumerate}
+			\item Since there's only one object, namely $e$, in the category, all the morphisms in such category will send $e$ to $e$.
+				\begin{itemize}
+					\item The combinations of mrophisms are always associative.
+					\item There must exist an identity morphism, which'll be the identity in the group.
+					\item Since it's a groupoid, every morphism has a inverse.
+				\end{itemize}
+			\item We consider a category $\mathscr{C}$ whose objects are $A,B$. Consider
+				$$
+				\mathrm{Mor}(A,B)=\{id_{A},id_{B}\}
+				.$$ 
+				and we can see that is's a groupiod without being associative, therefore not a group.
+		\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	test
+\end{exercise}
+
+\end{document}
