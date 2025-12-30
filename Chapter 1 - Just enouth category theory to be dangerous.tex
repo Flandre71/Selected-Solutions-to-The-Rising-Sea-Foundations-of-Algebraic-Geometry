@@ -45,6 +45,7 @@
 					\item There must exist an identity morphism, which'll be the identity in the group.
 					\item Since it's a groupoid, every morphism has a inverse.
 				\end{itemize}
+				\emph{ (In fact every group can be represented using the language of vategory. Consider Cayley's Theorem and we ca see every group element can be regarded as an automorphism, satisfying the case of morphism to a object itself.) }
 			\item We consider a category $\mathscr{C}$ whose objects are $A,B$. Consider
 				$$
 				\mathrm{Mor}(A,B)=\{id_{A},id_{B}\}
@@ -54,7 +55,61 @@
 \end{exercise}
 
 \begin{exercise}
-	test
+	\leavevmode \vspace{-\baselineskip}
+		\begin{enumerate}
+			\item Similar to the case in \textbf{1.1.A}, we can use exactly the same proof to show that invertible elements of $\mathrm{Mor}(A,A)$ forms a group.
+			\item Automorphism groups of objects in \textbf{Example 1.1.2} are those permutation groups permutating the elements in a group.
+			\item Automorphism groups of objects in \textbf{Example 1.1.3} are those invertible linear transformations mapping a linear space to itself.
+		\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	% \leavevmode \vspace{-\baselineskip}
+	% 	\begin{enumerate}
+	% 		\item In the case of finite cases, the set of bases of $Vec_{k},Vec_{k}^{\vee}$ is finite. Therefore the functor $(\cdot)^{\vee}$ must be isomorphism.
+	% 	\end{enumerate}
+	\emph{skipped (require \textbf{1.1.21} to solve.)}
+\end{exercise}
+
+\begin{exercise}
+	Since it's finite, just find out the bases and we can define a trivial isomorphism between $\mathscr{V}$ and $f.d.Vec_{k}$ by mapping those bases respectively.
+\end{exercise}
+
+\section{Universal properties determine an object up to unique isomorphism}
+
+\begin{exercise}
+	\leavevmode \vspace{-\baselineskip}
+	\begin{enumerate}
+		\item For any two initial objects $A,B$, we define
+			 $$
+			\varphi: A\mapsto B,\psi: B\mapsto A
+			.$$ 
+			And we can see 
+			$$
+			\varphi \circ \psi :B\mapsto B,\psi\circ\varphi:A\mapsto A
+			.$$ 
+			Also, notice since $A,B$ are initial objects, they have only one unique map to every objects in the category, including themselves. And $Id_{A},Id_{B}$ maps $A,B$ to themselves. Hence we obtain
+			\begin{align*}
+				& Id_{A}=\psi\circ\varphi \\
+				& Id_{B}=\psi\circ\varphi
+			.\end{align*}
+			So we know $\varphi,\phi$ are isomorphisms.
+			\qed
+		\item The proof is similar to \emph{(a)}, skipped.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\leavevmode \vspace{-\baselineskip}
+	\begin{enumerate}
+		\item In the category of sets, the initial and final object is $\emptyset$ and the class of all sets, respectively.
+		\item In the category of rings, the initial and final object is the zero ring and the class of all rings, respectively.
+		\item \emph{Skipped (haven't learn topology yet).}
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	
 \end{exercise}
 
 \end{document}
