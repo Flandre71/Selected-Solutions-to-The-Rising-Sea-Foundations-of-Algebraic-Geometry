@@ -109,7 +109,42 @@
 \end{exercise}
 
 \begin{exercise}
-	
+	\leavevmode \vspace{-\baselineskip}
+	\begin{itemize}
+		\item $(\Leftarrow)$: When $S$ contains no zerodivisors, we prove by contradiction: Assume that under the canonical ring map  $\varphi:A\mapsto S^{-1}A$, there exist $a_{1},a_{2}\in A,\ s.t.\varphi(a_{1})=\varphi(a_{2})$. Now we have $a_{1}/1 = a_{2}/1$, which means
+			$$
+			\exists s \in S, s.t.\ s(a_{1}-a_{2})=0
+			.$$ 
+			Which contradicts with the fact that $S$ has no zerodivisors!
+		\item $(\Rightarrow)$: When $\varphi:A \mapsto  S^{-1}A$ is injective, we assume $S$ contains a zerodivisors $s$ at which
+			$$
+			\exists d\in A,\ s.t.\ d\neq 0,\ s\cdot d=0
+			.$$ 
+			Now let $a_{1},a_{2}\in A,\ s.t.\ a_{1}-a_{2}=d$. Since $\varphi$ is injective,  we must have $\varphi(a_{1})\neq \varphi(a_{2})$. Which contradicts with the fact that
+			$$
+			s(a_{1}-a_{2})=s\cdot d = 0
+			.$$ 
+			\qed
+	\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+	Suppose
+	\begin{align*}
+		& f:A\mapsto B\\
+		& \varphi :A\mapsto S^{-1}A
+	.\end{align*}
+	By the first translation in by author, we have to prove that there an unique ring homomorphism $\psi$ mapping $S^{-1}A$ to $B$. Recall that $\forall a \in A, f(a)=\varphi(a / 1)$. Also, for all $a\in A,s \in S$,
+	$$
+	\frac{a}{s}\cdot \frac{s}{1}= \frac{a}{1}
+	.$$ 
+	So
+	\begin{align*}
+		& \psi( \frac{a}{s} )\cdot \psi( \frac{s}{1} ) = \psi( \frac{a}{1} )\\
+		& \psi( \frac{a}{s} )= \psi( \frac{a}{1} )\cdot \psi( \frac{s}{1} )^{-1} \\
+	.\end{align*}
+	And we can see $\psi( \frac{a}{s} )$ is uniquely defined!
+	\qed
 \end{exercise}
 
 \end{document}
