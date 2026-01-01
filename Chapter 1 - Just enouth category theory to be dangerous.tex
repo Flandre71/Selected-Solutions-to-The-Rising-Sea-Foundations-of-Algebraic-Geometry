@@ -232,10 +232,68 @@
 			\mathcal{F}(g)\circ \mathcal{F}(f):M\otimes N \longrightarrow \mathcal{F}(g) \left( f(M)\otimes N \right) =g\circ f (M)\otimes N
 			.$$ 
 			\qed
-		\item 
+		\item \emph{(The proof can be obtianed by checking the mapping property step by step, skipped)}
 	\end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+	\emph{(Trivial.)}\\
+	Because from the textbook content right above this question, we see any two maps $T,\ T'$ has a unique $A$-linear map to each other.
+\end{exercise}
 
+\begin{exercise}
+	Because the construction in \S\emph{1.2.5} is a bilinear map, is unique up to isomorphism.
+\end{exercise}
+
+\begin{exercise}
+	\leavevmode \vspace{-\baselineskip}
+	\begin{enumerate}
+		\item 
+			\begin{itemize}
+				\item $\forall b_{1},\ b_{2}\in B,\ b\otimes_{A}m\in B\otimes M$, we have
+					\begin{align*}
+						(b_{1}+b_{2})(b\otimes_{A}m)&=(b_{1}+b_{2})b\otimes_{A}m\\
+										&=(b_{1}b+b_{2}b)\otimes_{A}m\\
+										&=b_{1}b\otimes_{A}m+b_{2}b\otimes_{A}m\\
+										&=b(b_{1}\otimes_{A}m)+b(b_{2}\otimes_{A}m)
+					.\end{align*}
+					\begin{align*}
+						(b_{1}b_{2})(b\otimes_{A}m)&=(b_{1}b_{2}b)\otimes_{A}m\\
+							     &=b_{1}(b_{2}(b\otimes_{A}m))
+					.\end{align*}
+					\begin{align*}
+						b(b_{1}\otimes_{A}m+b_{2}\otimes_{A}m)&=b(b_{1}\otimes_{A}m)+b(b_{2}\otimes_{A}m)
+					.\end{align*}
+					% Which means that $B\otimes_{A}M$ meets the requirement to be a $B$-module.
+				\item Denote such map by $\mathcal{F}$. We see for $A\in \mathrm{Mod}_{A},\ B\otimes_{A}M\in \mathrm{Mod}_{B}$,
+					$$
+					 \mathcal{F}: A\longmapsto B\otimes_{A}M
+					.$$ 
+					And for $\varphi \in \mathrm{Mor}(A),\ \varphi: A\mapsto A'$,
+					$$
+					\mathcal{F}(\varphi):B\otimes_{A}M\longmapsto B\otimes_{A'}M
+					.$$ 
+			\end{itemize}
+		\item From \emph{a} we know $B\otimes _{A}C$ is a $B$-module and $C$-module simultaneously, therefore we have
+			$$
+			b\otimes c=(bc)(1_{B}\otimes 1_{C})
+			$$ 
+			where we define the product of $b$ and  $c$ as a map $B\times C\longrightarrow B\times C$.\emph{(Roughly just regard it a Cartesian product.)}
+			Now addtition and multiplication will be given by
+			\begin{align*}
+				b_1\otimes c_1+b_2\otimes c_2&=((b_1+b_2)(c_{1}+c_2))(1_B\otimes 1_{C})\\
+							     &=(b_1+b_2)\otimes (c_1+c_2)
+			.\end{align*}
+			\begin{align*}
+				b_1\otimes c_1\cdot b_2\otimes c_2&=((b_1b_2)(c_1c_2))(1_{B}\otimes 1_{C})\\
+								  &=(b_1b_2)\otimes (c_1c_2)
+			.\end{align*}
+			Commutative, associative and distributive law can be checked easily. And the $0,\ 1$ of this ring will be
+			$$
+			0_{B}\otimes 0_{C},\ 1_{B}\otimes 1_{C}
+			$$ 
+			respectively.
+	\end{enumerate}
+\end{exercise}
 
 \end{document}
