@@ -7,6 +7,7 @@
 \usepackage{amsthm}
 \usepackage{enumitem}
 \usepackage{mathrsfs}
+\usepackage{tikz-cd}
 
 \setlist[enumerate,1]{
     label=(\alph*), 
@@ -265,7 +266,7 @@
 						b(b_{1}\otimes_{A}m+b_{2}\otimes_{A}m)&=b(b_{1}\otimes_{A}m)+b(b_{2}\otimes_{A}m)
 					.\end{align*}
 					% Which means that $B\otimes_{A}M$ meets the requirement to be a $B$-module.
-				\item Denote such map by $\mathcal{F}$. We see for $A\in \mathrm{Mod}_{A},\ B\otimes_{A}M\in \mathrm{Mod}_{B}$,
+				\item Denote such map by $\mathcal{F}$. We see for ring $A$ and $B\otimes_{A}M\in \mathrm{Mod}_{B}$,
 					$$
 					 \mathcal{F}: A\longmapsto B\otimes_{A}M
 					.$$ 
@@ -274,25 +275,290 @@
 					\mathcal{F}(\varphi):B\otimes_{A}M\longmapsto B\otimes_{A'}M
 					.$$ 
 			\end{itemize}
-		\item From \emph{a} we know $B\otimes _{A}C$ is a $B$-module and $C$-module simultaneously, therefore we have
+		\item We define addtion as formal sum and multiplication as
 			$$
-			b\otimes c=(bc)(1_{B}\otimes 1_{C})
-			$$ 
-			where we define the product of $b$ and  $c$ as a map $B\times C\longrightarrow B\times C$.\emph{(Roughly just regard it a Cartesian product.)}
-			Now addtition and multiplication will be given by
-			\begin{align*}
-				b_1\otimes c_1+b_2\otimes c_2&=((b_1+b_2)(c_{1}+c_2))(1_B\otimes 1_{C})\\
-							     &=(b_1+b_2)\otimes (c_1+c_2)
-			.\end{align*}
-			\begin{align*}
-				b_1\otimes c_1\cdot b_2\otimes c_2&=((b_1b_2)(c_1c_2))(1_{B}\otimes 1_{C})\\
-								  &=(b_1b_2)\otimes (c_1c_2)
-			.\end{align*}
-			Commutative, associative and distributive law can be checked easily. And the $0,\ 1$ of this ring will be
+			(b_1\otimes c_1)\cdot (b_2\otimes c_2)=(b_1b_2)\otimes (c_1c_2)
+			.$$ 
+			And we can easily exam the properties to let it becomes a ring.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	We can define
+	$$
+	(S^{-1}A)\otimes _{A}M\longrightarrow S^{-1}M
+	.$$ 
+	As
+	$$
+	(\frac{a}{s})\otimes m\longmapsto \frac{am}{s}
+	.$$ 
+	And we can easily check that it meets the requirement to become a isomorphism.
+\end{exercise}
+
+\begin{exercise}
+	Because $I$ only has finite nonzero elements, so the properties of tensor product can be verified easily.
+\end{exercise}
+
+\begin{exercise}
+	It's because
+	$$
+	\alpha\circ\mathrm{pr}_{X} = \beta\circ\mathrm{pr}_{Y}
+	.$$ 
+\end{exercise}
+
+\begin{exercise}
+	\emph{(Skipped temporarily, haven't learnt topology yet.)}
+\end{exercise}
+
+\begin{exercise}
+	Denote the natural maps
+	$$
+	\mathrm{pr}_{X}:X\times Y\longrightarrow X
+	.$$ 
+	$$
+	pr_{Y}:X\times Y\longrightarrow Y
+	.$$ 
+	And the unique map
+	$$
+	\alpha:X\longrightarrow Z
+	.$$ 
+	$$
+	\beta:Y\longrightarrow Z
+	.$$ 
+	Now we have to prove
+	$$
+	\alpha\circ\mathrm{pr}_{X}=\beta\circ\mathrm{pr}_{Y}
+	.$$ 
+	Which do work since $Z$ is a final diagram, from which we know, up to isomorphisms, it only has a single morphism sending $X\times Y$ to $Z$.
+\end{exercise}
+
+\begin{exercise}
+	For notations, let
+	$$
+	\begin{tikzcd}
+U \arrow[r, "f_1"] \arrow[d, "g_1"] & V \arrow[d, "h_1"] \\
+W \arrow[d, "g_2"] \arrow[r, "f_2"] & X \arrow[d, "h_2"] \\
+Y \arrow[r, "f_3"]                  & Z                 
+\end{tikzcd}
+	.$$ 
+	And we can see
+	\begin{align*}
+		h_2\circ h_1\circ f_1&=h_2\circ f_2\circ g_1\\
+				     &=f_3\circ g_2\circ g_1
+	.\end{align*}
+	\qed
+\end{exercise}
+
+\begin{exercise}
+	$$
+	\begin{tikzcd}
+X_1\times_Y X_2 \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!" description, dotted] &                                       &                                   &   \\
+                                                                                   & X_1\times_{Z} X_2 \arrow[d] \arrow[r] & X_2 \arrow[d] \arrow[rdd, dashed] &   \\
+                                                                                   & X_1 \arrow[r] \arrow[rrd, dashed]     & Y \arrow[rd]                      &   \\
+                                                                                   &                                       &                                   & Z
+	\end{tikzcd}
+	.$$ 
+	Because from the problem we have the commutative diagram
+	$$
+	\begin{tikzcd}
+X_1\times_Y X_2 \arrow[d] \arrow[r] & X_2 \arrow[d, dashed] \\
+X_1 \arrow[r, dashed]               & Z                    
+	\end{tikzcd}
+	.$$ 
+	And by the definition of fibered product, there must exist a unqiue factoring map $X_1\times_{Y}X_2\longrightarrow X_{1}\times _{Z}X_2$.
+\end{exercise}
+
+\begin{exercise}
+	\emph{(Failed, not finished.)}\\
+	Given
+	$$
+	\begin{tikzcd}
+X_1\times_Y X_2 \arrow[d] \arrow[r] & X_2 \arrow[d] &   \\
+X_1 \arrow[r]                       & Y \arrow[rd]  &   \\
+                                    &               & Z
+	\end{tikzcd}
+	.$$ 
+	We need to prove the diagram below is a Cartesian Square:
+	$$
+	\begin{tikzcd}
+X_1\times_Y X_2 \arrow[d] \arrow[r] & X_1\times_Z X_2 \arrow[d] \\
+Y \arrow[r]                         & Y\times_Z Y              
+	\end{tikzcd}
+	.$$ 
+	From the previous exercise we know there exist a unique factoring map
+	$$
+	X_1\times_{Y}X_2\longrightarrow X_{1}\times _{Z}X_2
+	.$$ 
+	Notice there exist a unique map $X_1\times _{Y}X_2\longrightarrow X_1\times _{Z}X_2$:
+	$$
+	\begin{tikzcd}
+X_1\times_ZX_2 \arrow[d] \arrow[r] \arrow[rd, "\exists!" description, dotted] & X_2 \arrow[rd]                 &                                             \\
+X_1 \arrow[rd]                                                                & Y\times_ZY \arrow[d] \arrow[r] & Y \arrow[d] \arrow[ld, Rightarrow, no head] \\
+                                                                              & Y \arrow[r]                    & Z                                          
+	\end{tikzcd}
+	.$$ 
+\end{exercise}
+
+\begin{exercise}
+	For
+	$$
+	\begin{tikzcd}
+                                                & S                                                       &                                                  \\
+S_1 \arrow[r, "\varphi_1"] \arrow[ru, "\psi_1"] & S_1\sqcup S_2 \arrow[u, dotted] & S_2 \arrow[l, "\varphi_2"] \arrow[lu, "\psi_2"']
+	\end{tikzcd}
+	.$$ 
+	For $s_1\in S_1,\ s_2\in S_2$, define
+	$$
+	\varphi_1(s_1)=(s_1,\cdot ),\ \varphi_2(s_2)=(\cdot ,s_2)
+	.$$
+	Now for any $\psi_1,\ \psi_2$, we naturally have the induced morphism
+	$$
+	\Psi :S_1\sqcup S_2\longrightarrow S
+	$$ 
+	$$
+	\Psi:(s_1,\cdot )\longmapsto \psi_1(s_1)
+	$$ 
+	$$
+	\Psi:(\cdot ,s_2)\longmapsto \psi_2(s_2)
+	.$$
+	Which is unique and make the diagram commutative.
+\end{exercise}
+
+\begin{exercise}
+	Denote
+	$$
+	\begin{tikzcd}
+D &                                                       &                               \\
+  & B\times_AC \arrow[lu, "\varphi" description, dotted] & C \arrow[l] \arrow[llu, "h"'] \\
+  & B \arrow[u] \arrow[luu, "g"]                          & A \arrow[l] \arrow[u]        
+	\end{tikzcd}
+	$$ 
+	and we obtain the unique map $\varphi$ by
+	$$
+	\varphi((a\cdot b)\otimes c)=g(b)
+	$$ 
+	$$
+	\varphi(b\otimes (a\cdot c))=h(c)
+	$$ 
+\end{exercise}
+
+\begin{exercise}
+	$$
+	\begin{tikzcd}
+A \arrow[d, "\leq1" description, dotted] \arrow[rd, "\leq1" description, dotted] \arrow[rrd] &                       &   \\
+X \arrow[r, "\alpha"']                                                                       & Y \arrow[r, "\beta"'] & Z
+	\end{tikzcd}
+	$$ 
+	From the graph we obtian the proof easily.
+\end{exercise}
+
+\begin{exercise}
+	\emph{(Failed)}
+	\begin{enumerate}
+		\item 
+			\begin{itemize}
+				\item When $\pi$ is a monomorphism, we let $X\times _{Y}X=X$ by
+					$$
+					\begin{tikzcd}
+				X \arrow[d, "="'] \arrow[r, "="] & X \arrow[d, "\pi"] \\
+				X \arrow[r, "\pi"']              & Y                 
+					\end{tikzcd}
+					$$ 
+					Now for any $A$ satisfying the commutative diagram below, it must factor through $X$ uniquely by the definition of monomorphism.
+					$$
+					\begin{tikzcd}
+				A \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!" description, dotted] &                                  &                    \\
+        		                                                             		& X \arrow[d, "="'] \arrow[r, "="] & X \arrow[d, "\pi"] \\
+        		                                                             		& X \arrow[r, "\pi"']              & Y                 
+					\end{tikzcd}
+					$$ 
+				\item When $X\times _{Y}X$ exists, then any $A$ letting the diagram below commute
+					$$
+					\begin{tikzcd}
+A \arrow[rdd] \arrow[rrd] \arrow[rd, "\exists!" description, dotted] &                                &                    \\
+                                                                     & X\times_YX \arrow[d] \arrow[r] & X \arrow[d, "\pi"] \\
+                                                                     & X \arrow[r, "\pi"']            & Y                 
+					\end{tikzcd}
+					,$$ 
+					whose morphism to $X\times _{Y}X$ will factor through $X\times _{Y}X$ uniquely. Therefore any two map:
+					$$
+					\alpha,\ \beta:A\longrightarrow X
+					$$ 
+					can be factorized into
+					$$
+					\alpha= \alpha'\circ p,\ \beta=\beta'\circ p
+					$$ 
+					Where $p:A\longrightarrow X\times _{Y}X$ and $\alpha',\ \beta':X\times_{Y}X\longrightarrow X$. \\
+					$$
+					\begin{tikzcd}
+A \arrow[rdd, "\alpha"'] \arrow[rrd, "\beta"] \arrow[rd, "p" description, dotted] &                                                      &                    \\
+                                                                                  & X\times_YX \arrow[d, "\alpha'"'] \arrow[r, "\beta'"] & X \arrow[d, "\pi"] \\
+                                                                                  & X \arrow[r, "\pi"']                                  & Y                 
+					\end{tikzcd}
+					$$ 
+					So if
+					$$
+					\pi\circ \alpha=\pi\circ \beta
+					$$ 
+					We'll have
+					$$
+					\pi\circ \alpha'\circ p=\pi\circ \beta'\circ p
+					$$ 
+					Since $X\times _{Y}X$ is a fibered product, $\pi\alpha'=\pi\beta'$.
+			\end{itemize}
+		\item 
+		\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	$$
+	\begin{tikzcd}
+X_1\times_YX_2 \arrow[rdd] \arrow[rrd] &                                    &               &   \\
+                                       & X_1\times_ZX_2 \arrow[d] \arrow[r] & X_2 \arrow[d] &   \\
+                                       & X_1 \arrow[r]                      & Y \arrow[rd]  &   \\
+                                       &                                    &               & Z
+	\end{tikzcd}
+	$$ 
+	From Exercise \textbf{1.2.R} we know there exist a unique morphism
+	$$
+	\varphi:X_1\times_{Y}X_2\longrightarrow X_1\times _{Z}X_2
+	.$$ 
+	Now since $Y\longrightarrow Z$ is monomorphism, from the commutavity of $X_1\times _{Z}X_2\rightarrow X_1\rightarrow Y\rightarrow Z$ and $X_1\times _{Z}X_2\rightarrow X_2\rightarrow Y\rightarrow Z$ we can get the commutavity of
+	$$
+	\begin{tikzcd}
+X_1\times_ZX_2 \arrow[d] \arrow[r] & X_2 \arrow[d] \\
+X_1 \arrow[r]                      & Y            
+	\end{tikzcd}
+	$$ 
+	And therefore there's a unique morphism $\psi:X_1\times _{Z}X_2\longrightarrow X_1\times _{Y}X_2$. 
+	By their uniqueness, we have
+	$$
+	\varphi\circ \psi\circ \varphi=\varphi,\ \psi\circ \varphi\circ \psi=\psi
+	$$ 
+	So $\varphi\circ \psi=\mathrm{id}_{X_1\times _{Z}X_2},\ \psi\circ \varphi=\mathrm{id}_{X_1\times _{Y}X_2}$.
+\end{exercise}
+
+\begin{exercise}
+	\leavevmode \vspace{-\baselineskip}
+	\begin{enumerate}
+		\item We simply let $i_{C}$ correspond to the morphism $A\longrightarrow A'$ and verify the properties stated in the problems. Also, uniqueness can be obtianed by letting $C=A$.
+		\item We follow from the hint: Let $C=A'$ and we get a bijection
 			$$
-			0_{B}\otimes 0_{C},\ 1_{B}\otimes 1_{C}
+			i_{A'}:(\mathrm{Mor}(A',A))\longrightarrow (\mathrm{Mor}(A',A'))
 			$$ 
-			respectively.
+			We pick out $h$ from $\mathrm{Mor(A',A)}$ such that $i_{A'}(h)=\mathrm{id}_{A'}$. From \textbf{(a)} we know $i_{A'}$ can be represented using $g$ :
+			$$
+			\mathrm{id}_{A'}=i_{A'}(h)=g\circ h
+			$$ 
+			On the other hand, we prove $i_{A}^{-1}$ can be induced by $h$ using the similar method to \textbf{(a)}.
+			$$
+			\exists !\ \mathrm{id}_{A}\in \mathrm{Moe(A,A)},\ i_{A}(id_{A})=g\in \mathrm{Mor}(A,A')
+			$$ 
+			And we can see
+			$$
+			\mathrm{id}_{A}=i^{-1}(g)=h\circ g
+			$$ 
+			\qed
 	\end{enumerate}
 \end{exercise}
 
