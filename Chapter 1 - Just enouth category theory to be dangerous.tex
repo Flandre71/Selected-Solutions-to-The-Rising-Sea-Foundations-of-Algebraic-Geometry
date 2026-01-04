@@ -77,7 +77,6 @@
 \end{exercise}
 
 \section{Universal properties determine an object up to unique isomorphism}
-
 \begin{exercise}
 	\leavevmode \vspace{-\baselineskip}
 	\begin{enumerate}
@@ -539,7 +538,14 @@ X_1 \arrow[r]                      & Y
 \end{exercise}
 
 \begin{exercise}
-	\leavevmode \vspace{-\baselineskip}
+	% \leavevmode \vspace{-\baselineskip}
+	$$
+	\begin{tikzcd}
+B \arrow[rrdd] \arrow[dd]                                                    &                                                                               & A' \arrow[lldd, "h"', bend right, shift right=3] \arrow[loop, distance=2em, in=125, out=55] \\
+{}                                                                           &                                                                               & {}                                                                                          \\
+A \arrow[rruu, "g"', bend right] \arrow[loop, distance=2em, in=305, out=235] & {} \arrow[ru, "i_c"', bend right=67, shift right=2] \arrow[lu, bend right=49] & C \arrow[uu] \arrow[ll, "u" description]                                                   
+	\end{tikzcd}
+	$$ 
 	\begin{enumerate}
 		\item We simply let $i_{C}$ correspond to the morphism $A\longrightarrow A'$ and verify the properties stated in the problems. Also, uniqueness can be obtianed by letting $C=A$.
 		\item We follow from the hint: Let $C=A'$ and we get a bijection
@@ -560,6 +566,54 @@ X_1 \arrow[r]                      & Y
 			$$ 
 			\qed
 	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\emph{(Skipped temporarily due to the star.)}
+	\begin{enumerate}
+		\item We consider the contravariant functors of the morphisms $B\longrightarrow A$.
+		\item 
+	\end{enumerate}
+\end{exercise}
+
+\section{Limits and colimits}
+\begin{exercise}
+	\emph{(Trivial.)}\\
+	Since $\mathscr{I}$ is a partially ordered set, there's at most one morphism for any two object in $\mathscr{I}$. 
+\end{exercise}
+
+\begin{exercise}
+	$$
+	\begin{tikzcd}
+X_1\times_ZX_2 \arrow[rd, dotted] \arrow[rdd] \arrow[rrd] &                                    &                                   &   \\
+                                                          & X_1\times_YX_2 \arrow[r] \arrow[d] & X_2 \arrow[d] \arrow[rdd, dashed] &   \\
+                                                          & X_1 \arrow[r] \arrow[rrd, dashed]  & Y \arrow[rd]                      &   \\
+                                                          &                                    &                                   & Z
+	\end{tikzcd}
+	\begin{tikzcd}
+Y\times_{(Y\times_ZY)}(X_1\times_ZX_2) \arrow[d] \arrow[r] & X_1\times_ZX_2 \arrow[d] \\
+Y \arrow[r]                                                 & Y\times_ZY              
+	\end{tikzcd}
+	$$ 
+	For $X_1\times _{Y}X_2$:
+	\begin{align*}
+		X_1\times _{Y}X_2\rightarrow Y&=X_1\times _{Y}X_2\rightarrow X_1\rightarrow Y\\
+					      &=X_1\times _{Y}X_2\rightarrow X_2\rightarrow Y
+	\end{align*}
+	$$
+	X_1\times _{Y}X_2\rightarrow Z=X_1\times _{Y}X_2\rightarrow Y\rightarrow Z
+	$$ 
+	For $Y\times_{(Y\times _{Z}Y)}(X_1\times _{Z}X_2)$:
+	\begin{align*}
+		Y\times_{(Y\times _{Z}Y)}(X_1\times _{Z}X_2)\rightarrow Y
+		&=Y\times_{(Y\times _{Z}Y)}(X_1\times _{Z}X_2)\rightarrow X_1\times _{Z}X_2\rightarrow X_1\rightarrow Y\\
+		&=Y\times_{(Y\times _{Z}Y)}(X_1\times _{Z}X_2)\rightarrow X_1\rightarrow Y
+	\end{align*}
+	$$
+	Y\times _{(Y\times _{Z}Y)}(X_1\times _{Z}X_2)\rightarrow Z=
+	Y\times _{(Y\times _{Z}Y)}(X_1\times _{Z}X_2)\rightarrow Y\rightarrow Z
+	$$ 
+	\qed
 \end{exercise}
 
 \end{document}
